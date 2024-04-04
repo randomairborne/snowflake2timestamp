@@ -49,19 +49,13 @@ function calculateAllTimestamps(data) {
       deltaEl.innerText = "n/a";
     } else {
       const differenceMs = date - previous;
-      let sign;
-      if (differenceMs >= 0) {
-        sign = "+";
-      } else {
-        sign = "-";
-      }
       const totalDifferenceSecs = Math.abs(differenceMs / 1000);
       const secs = totalDifferenceSecs % 60;
       const minutes = Math.floor(totalDifferenceSecs / 60) % 60;
       const hours = Math.floor(totalDifferenceSecs / 3600) % 24;
       const days = Math.floor(totalDifferenceSecs / 86400);
 
-      let delta = sign.toString();
+      let delta = "";
       let started = false;
       if (days > 0) {
         delta += `${days.toFixed()}d `;
