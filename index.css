@@ -1,0 +1,44 @@
+html {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2ch;
+}
+
+#input {
+  width: 25ch;
+  margin-bottom: 2ch;
+}
+
+.label {
+  padding-top: 2ch;
+  padding-bottom: 2ch;
+}
+
+table {
+  margin-top: 2ch;
+}
+
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 4px;
+  text-align: center;
+}

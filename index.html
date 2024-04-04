@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Snowflake to Timestamp (and sort!)</title>
+    <meta
+      name="description"
+      content="Get basic information on a bunch of discord snowflakes and how they relate"
+    />
+  </head>
+  <body>
+    <script src="./main.js" defer></script>
+    <label for="input" class="label"
+      >Please paste newline seperated discord snowflakes in the below
+      box.</label
+    >
+    <textarea id="input" rows="20" cols="20"></textarea>
+    <table>
+      <thead>
+        <tr>
+          <th>Snowflake</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Delta</th>
+        </tr>
+      </thead>
+      <tbody id="output"></tbody>
+    </table>
+  </body>
+</html>
