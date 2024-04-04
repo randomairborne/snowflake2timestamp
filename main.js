@@ -56,27 +56,27 @@ function calculateAllTimestamps(data) {
         sign = "-";
       }
       const totalDifferenceSecs = Math.abs(differenceMs / 1000);
-      const secs = (totalDifferenceSecs % 60).toFixed(0);
-      const minutes = (Math.floor(totalDifferenceSecs / 60) % 60).toFixed(0);
-      const hours = (Math.floor(totalDifferenceSecs / 3600) % 24).toFixed(0);
-      const days = Math.floor(totalDifferenceSecs / 86400).toFixed(0);
+      const secs = totalDifferenceSecs % 60;
+      const minutes = Math.floor(totalDifferenceSecs / 60) % 60;
+      const hours = Math.floor(totalDifferenceSecs / 3600) % 24;
+      const days = Math.floor(totalDifferenceSecs / 86400);
 
       let delta = sign.toString();
       let started = false;
       if (days > 0) {
-        delta += `${days}d `;
+        delta += `${days.toFixed()}d `;
         started = true;
       }
       if (hours > 0 || started) {
-        delta += `${hours}h `;
+        delta += `${hours.toFixed()}h `;
         started = true;
       }
       if (minutes > 0 || started) {
-        delta += `${minutes}m `;
+        delta += `${minutes.toFixed()}m `;
         started = true;
       }
-      if (secs > 0 || started) {
-        delta += `${secs}s `;
+      if (secs > 0 || started || (secs === 0 && !started)) {
+        delta += `${secs.toFixed()}s `;
       }
       deltaEl.innerText = delta.trim();
     }
