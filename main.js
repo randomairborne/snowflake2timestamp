@@ -35,7 +35,9 @@ function calculateAllTimestamps(data) {
     const deltaEl = document.createElement("td");
 
     const year = date.getUTCFullYear().toString().padStart(4, "0");
-    const month = date.getUTCMonth().toString().padStart(2, "0");
+    // what the fuck W3C? why is this the only one that's like this?? 
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMonth
+    const month = (date.getUTCMonth() + 1).toString().padStart(2, "0");
     const day = date.getUTCDate().toString().padStart(2, "0");
 
     const hours = date.getUTCHours().toString().padStart(2, "0");
